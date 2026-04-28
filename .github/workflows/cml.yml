@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate Simple CML Report
         env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_TOKEN: ${{ secrets.CML_TOKEN }}
         run: |
           echo "# Student Risk Prediction Results" > report.md
           echo "## Model trained successfully ✅" >> report.md
