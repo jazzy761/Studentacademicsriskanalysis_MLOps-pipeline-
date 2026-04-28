@@ -8,7 +8,9 @@ permissions:
   contents: read
   pull-requests: write
   issues: write
-
+  checks: write
+  statuses: write
+  
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
