@@ -46,11 +46,7 @@ jobs:
           echo "# Student Risk Prediction Results" > report.md
           echo "## Model trained successfully ✅" >> report.md
           
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            cml comment create report.md
-          else
-            cat report.md >> $GITHUB_STEP_SUMMARY
-          fi
+          
 
       - name: Build Docker Image
         run: |
