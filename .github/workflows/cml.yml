@@ -10,7 +10,7 @@ permissions:
   issues: write
   checks: write
   statuses: write
-  
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
         run: |
           echo "# Student Risk Prediction Results" > report.md
           echo "## Model trained successfully ✅" >> report.md
-          echo "Model file generated and ready for deployment." >> report.md
+          echo "![](./plots/results.png)" >> report.md
           cml comment create report.md
 
       - name: Build Docker Image
