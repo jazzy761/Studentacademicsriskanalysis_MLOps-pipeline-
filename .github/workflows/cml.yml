@@ -5,8 +5,7 @@ on:
     branches: ["main"]
 
 permissions:
-  contents: read
-  contents: write 
+  contents: write
   pull-requests: write
   issues: write
   checks: write
@@ -42,7 +41,7 @@ jobs:
 
       - name: Generate Simple CML Report
         env:
-          REPO_TOKEN: ${{ secrets.CML_TOKEN }}
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ← use built-in token
         run: |
           echo "# Student Risk Prediction Results" > report.md
           echo "## Model trained successfully ✅" >> report.md
