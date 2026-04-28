@@ -40,11 +40,13 @@ jobs:
           ls -lh model.pkl
 
       - name: Generate Simple CML Report
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ← use built-in token
+        
         run: |
-          echo "# Student Risk Prediction Results" > report.md
-          echo "## Model trained successfully ✅" >> report.md
+          echo "# Student Risk Prediction Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Model trained successfully ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Model file generated and ready for deployment." >> $GITHUB_STEP_SUMMARY
           
           
 
